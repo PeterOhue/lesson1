@@ -1,0 +1,244 @@
+/* Open font.google.com Search for Poppins*/
+/* Select extra light 200 , light 300, regular 400*/
+/* medium 500,  semi bold 600, bold 700, extrabold 800*/
+/* Use import and copy style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Using root scope last step before JS */
+:root {
+   --overlay-color: #03a9f4;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: grey;
+    color: whitesmoke;
+    /* z-index: 2 This  puts it infront of the menu Try -2 
+    remove display none*/
+    z-index: 2;
+    /* After this you remove display: none */
+
+    /* Add this transitio after javascript */
+    transition: 1.5s;
+}
+
+/* After text h3.... */
+.showcase.active {
+    right: 300px;
+}
+/*  You may comment out the video */
+
+.toggle {
+   position: relative;
+   width: 60px;
+   height: 60px;
+   background: url('menu2.png');
+   background-repeat: no-repeat;
+   background-size:30px;
+   background-position: center;
+   cursor: pointer;
+}
+
+.showcase header {
+    position: absolute;
+    /* The above takes it out of the flexbox */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    /* The aboves moves it right */
+    align-items: center;
+    /* for vertical rows for horizontal use justify-content */
+    justify-content: space-between;
+    /* The above pushes it over */
+}
+.logo {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+/* Return to html for the toogle active */
+/* This changes the toggle button */
+.toggle.active {
+    background: url('close.png');
+    background-repeat: no-repeat;
+    background-size:25px;
+    background-position: center;
+    cursor: pointer;
+}
+
+.showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* removing the balck space below and above use: */
+    object-fit: cover;
+    /* Set opacity */
+    opacity: 0.8;
+}
+
+/*  To put the text ontop */
+.text {
+    position: relative;
+    z-index: 10;
+}
+
+/* We want overlay to be like video */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* To make a see through background */
+    /* background: rgba(0,0,0,0.5); */
+    /* Alternatively do: and play with the color */
+    /* background: #03a9f4; */
+    /* Change the above line after applying root scop */
+    background: var(--overlay-color);
+    mix-blend-mode: overlay;
+}
+
+/* em = whatever the parent element is multiply by 5 */
+.text h2 {
+    font-size: 5em;
+    font-weight: 800;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text h3 {
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text p {
+    font-size: 1.1em;
+    margin: 20px 0;
+    font-weight: 400;
+    /* Below controls the paragraph length */
+    max-width:700px;
+}
+
+.text a {
+    display: inline-block;
+    font-size: 1em;
+    background: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    color:black;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.text a:hover {
+    letter-spacing: 6px;
+}
+
+li a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.social {
+    position: absolute;
+    bottom: 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social li {
+    list-style: none;
+    
+}
+
+.social li a {
+    display: inline-block;
+    /* To change colour */
+    filter: invert(1);
+    /* Spacing them */
+    margin-right: 20px;
+    transform: scale(0.5);
+    transition: 0.5s;
+}
+
+.social li a:hover {
+    transform: scale(0.5) translateY(-15px);
+}
+
+@media (max-width: 798px) {
+    .showcase,
+    .showcase header {
+        padding: 40px;
+    }
+
+    .text h2 {
+        font-size: 3em;
+    }
+
+    .text h3 {
+        font-size: 2em;
+    }
+}
+
+/*  let's add javascript to the showcase and 
+the toggle  - GO to Show case on top*/
+/* 1. add active to showase and toggle in html */
+
+.menu {
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    /* This is the amount we moved the showcase over */
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    /* The above makes it center vertically */
+    justify-content: center;
+    /* The above makes it centre horizontally */
+}
+
+.menu ul {
+    position: relative;
+    list-style: none;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: darkgrey;
+}
+
+.menu ul li a:hover {
+    color: var(--overlay-color);
+/* Since we are repeating this color 
+We can use a custom property like a variable
+Use the root scope at the top*/
+}
+
+/* Next is Java script. So remove the active in
+showcase and toggle */

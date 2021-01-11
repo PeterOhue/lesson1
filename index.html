@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <section class="showcase"> -->
+    <!-- To make show case active -->
+    <!-- <section class="showcase active"> -->
+    <!-- Remove the active for JS -->
+    <section class="showcase">
+        <header>
+            <h2 class="logo">Travel</h2>
+            <!-- Add active to toogle -->
+            <!-- <div class="toggle"></div> -->
+            <!-- <div class="toggle active"></div> -->
+            <!-- Remove the active for JS -->
+            <div class="toggle"></div>
+            <!-- Add the line below after css .logo -->
+            <!-- <div class="toggle active"></div> -->
+        </header>
+        <video src="explore.mp4" muted loop autoplay></video>        
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>Never Stop</h2>
+            <h3>Exploring The World</h3>
+            <p>Use lorem20 ipsum dolor sit amet consectetur adipisicing elit. Alias magni asperiores dolores aliquid praesentium 
+            similique excepturi quia quod maxime facilis.
+            </p>
+            <a href="#">Explore</a>
+        </div>
+        <ul class="social">
+            <li><a href="#"><img src="facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="instagram.png" alt=""></a></li>
+        </ul>
+    </section>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <script>
+        const menuToggle = document.querySelector('.toggle');
+        const showcase = document.querySelector('.showcase');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active')
+            showcase.classList.toggle('active')
+        });        
+    </script>
+    <!-- FINALLY: For a smooth transition go to the showcase in css -->
+</body>
+</html>
